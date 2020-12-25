@@ -301,7 +301,7 @@ This is the main endpoint to use GetScreenshot. This section contains a descript
 | Parameter | Type   | Description                                                                             | Example                                                           |
 |-----------|--------|-----------------------------------------------------------------------------------------|-------------------------------------------------------------------|
 | `apikey`    | string | Your secret API Key. This is required to authenticate your request.                     | `?apikey=5WjESjB72Rb2JC7frBf026kBgg82DaPQIOxc` <br> *-Not an actual apikey-* |
-| `url`       | string | URL of the website / page you want to screenshot. Should start with http:// or https:// | `&url=https://google.com`                                              |                               
+| `url`       | string | URL of the website / page you want to screenshot. Should start with http:// or https:// | `&url=https://google.com`                                        |                                   
 
 #### Format Parameters
 
