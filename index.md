@@ -31,9 +31,6 @@ curl -X GET \
 </p>
 </details>
 
-</p>
-</details>
-
 ### JavaScript 
 
 <details>
