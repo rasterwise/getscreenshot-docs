@@ -21,7 +21,7 @@ Code Example
 </summary>
 <p>
 
-```curl
+```
 curl -X GET \
   'https://api.rasterwise.com/v1/get-screenshot?url=https://www.apple.com&apikey=REPLACE_WITH_YOUR_API_KEY' \
   -H 'Auth: allow' \
