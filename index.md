@@ -1,3 +1,8 @@
+---
+title: Getting Started
+nav_order: 0
+---
+
 # Getting Started With GetScreenshot
 
 *How to get started with GetScreenshot simple API (5-10 mins) and start generating screenshots via the GET API.*
