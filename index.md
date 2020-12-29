@@ -13,8 +13,8 @@ nav_order: 0
 GetScreenshot is a powerful programmable API that allows you to do screenshot operations at scale
 and for less than the existing solutions.
 
-[Getting Started](https://docs.rasterwise.com/get-screenshot/get-screenshot-api.html){: .btn .btn-purple }
-[API Reference](https://docs.rasterwise.com/get-screenshot/get-screenshot-api.html){: .btn .btn-outline }
+[Getting Started](https://docs.rasterwise.com/get-screenshot/){: .btn .btn-purple }
+[API Reference](https://docs.rasterwise.com/get-screenshot/api-reference){: .btn .btn-outline }
 
 <hr>
 
