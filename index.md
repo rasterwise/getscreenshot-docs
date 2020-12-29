@@ -1,7 +1,7 @@
 ---
 title: Home
 description: "Rasterwise builds affordable web utilities exposed through easy to use RESTful API endpoints"
-nav_order: 0
+nav_order: 1
 ---
 
 # Rasterwise APIs
