@@ -23,11 +23,7 @@ curl -X GET \
 
 ### JavaScript 
 
-<details>
-<summary>
-Code Example
-</summary>
-<p>
+
 
 ```js
 var data = null;
@@ -49,19 +45,11 @@ xhr.setRequestHeader("Postman-Token", "d93809f4-c1b1-4549-8456-36bb75995c75");
 xhr.send(data);
 ```
 
-</p>
-</details>
+
 
 ### NodeJS
 
-<details>
-<summary>
-Code Example
-</summary>
-<p>
-
-
-```
+```js
 var request = require("request");
 
 var options = { method: 'GET',
@@ -80,19 +68,14 @@ request(options, function (error, response, body) {
 });
 ```
 
-</p>
-</details>
+
 
 ### Ruby
 
-<details>
-<summary>
-Code Example
-</summary>
-<p>
+
 	
 
-```
+```ruby
 require 'uri'
 require 'net/http'
 
@@ -108,16 +91,11 @@ response = http.request(request)
 puts response.read_body
 ```
 
-</p>
-</details>
+
 
 ### Python 
 
-<details>
-<summary>
-Code Example
-</summary>
-<p>
+
 
 ```python
 import http.client
@@ -139,16 +117,11 @@ data = res.read()
 print(data.decode("utf-8"))
 ```
 
-</p>
-</details>
+
 
 ### Java
 
-<details>
-<summary>
-Code Example
-</summary>
-<p>
+
 
 ```java
 OkHttpClient client = new OkHttpClient();
@@ -163,16 +136,11 @@ Request request = new Request.Builder()
 Response response = client.newCall(request).execute();
 ```
 
-</p>
-</details>
+
 
 ### Go
 
-<details>
-<summary>
-Code Example
-</summary>
-<p>
+
 
 ```go
 package main
@@ -203,16 +171,11 @@ func main() {
 }
 ```
 
-</p>
-</details>
+
 
 ### PHP
 
-<details>
-<summary>
-Code Example
-</summary>
-<p>
+
 
 ```php
 <?php
@@ -241,16 +204,11 @@ try {
 }
 ```
 
-</p>
-</details>
+
 
 ### C#
 
-<details>
-<summary>
-Code Example
-</summary>
-<p>
+
 
 ```c#
 var client = new RestClient("https://api.rasterwise.com/v1/get-screenshot?url=https://www.apple.com&apikey=REPLACE_WITH_YOUR_API_KEY");
@@ -260,7 +218,6 @@ request.AddHeader("Auth", "allow");
 IRestResponse response = client.Execute(request);
 ```
 
-</p>
-</details>
+
 
 The code snippets above should be enough to get started and generate a simple 1280 x 800 pixels screenshots of any live website. The base example is a good start to start adding other parameters that control the outcome (generated screenshot).
