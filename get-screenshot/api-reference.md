@@ -1,5 +1,6 @@
 ---
 title: API Reference
+parent: GetScreenshot API
 nav_order: 1
 ---
 

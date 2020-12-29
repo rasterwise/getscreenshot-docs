@@ -1,5 +1,6 @@
 ---
 title: Getting Started
+parent: GetScreenshot API
 nav_order: 0
 ---
 

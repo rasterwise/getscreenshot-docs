@@ -1,5 +1,6 @@
 ---
 title: API Overview
+parent: GetScreenshot API
 nav_order: 2
 ---
 
