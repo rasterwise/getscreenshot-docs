@@ -4,14 +4,13 @@ description: "Rasterwise builds affordable web utilities exposed through easy to
 nav_order: 0
 ---
 
-# Available Rasterwise APIs Documentation
-
-[Documentation](https://docs.rasterwise.com/get-screenshot/get-screenshot-api.html){: .btn .btn-purple }
+# Rasterwise APIs
 
 GetScreenshot is a powerful programmable API that allows you to do screenshot operations at scale
 and for less than the existing solutions.
 
 [Getting Started](https://docs.rasterwise.com/get-screenshot/get-screenshot-api.html){: .btn .btn-purple }
+[API Reference](https://docs.rasterwise.com/get-screenshot/get-screenshot-api.html){: .btn .btn-outline }
 
 <hr>
 
@@ -19,3 +18,4 @@ GetScrape is a high-level web scraping API that uses a headless browser to extra
 and focuses on the information you need and not on how is enclosed. (Coming Soon!)
 
 [Getting Started](#){: .btn .btn-purple }
+[API Reference](#){: .btn .btn-outline }
