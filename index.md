@@ -6,6 +6,10 @@ nav_order: 0
 
 # Rasterwise APIs
 
+<hr>
+
+## GetScreenshot
+
 GetScreenshot is a powerful programmable API that allows you to do screenshot operations at scale
 and for less than the existing solutions.
 
@@ -13,6 +17,8 @@ and for less than the existing solutions.
 [API Reference](https://docs.rasterwise.com/get-screenshot/get-screenshot-api.html){: .btn .btn-outline }
 
 <hr>
+
+## GetScrape
 
 GetScrape is a high-level web scraping API that uses a headless browser to extract data from websites
 and focuses on the information you need and not on how is enclosed. (Coming Soon!)
