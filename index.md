@@ -14,21 +14,12 @@ However, if you're interested in POST requests, please let us know since we have
 Here are some examples on how to generate a basic screenshot in the GetScreenshot API with some popular programming languages:
 
 ### cURL
-<details>
-<summary>
-Code Example
-</summary>
-<p>
-
 ```
 curl -X GET \
   'https://api.rasterwise.com/v1/get-screenshot?url=https://www.apple.com&apikey=REPLACE_WITH_YOUR_API_KEY' \
   -H 'Auth: allow' \
   -H 'cache-control: no-cache'
 ```
-
-</p>
-</details>
 
 ### JavaScript 
 
