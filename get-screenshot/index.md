@@ -1,7 +1,7 @@
 ---
 title: Getting Started
 parent: GetScreenshot API
-nav_order: 0
+nav_order: 1
 ---
 
 # Getting Started With GetScreenshot
