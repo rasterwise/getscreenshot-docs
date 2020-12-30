@@ -35,3 +35,11 @@ This is the main endpoint to use GetScrape. This section contains a description 
 | `filter`  | string | Passing the `filter` parameter set to a string will filter results that match that string. For example, `filter=ads` will only include results in the arrays that contain the string `ads`. You can think of `filter` as the opposite of `exclude`. | `&filter=ads`|
 | `filter_start` | string | Works like `filter` but it will only include strings that start with the passed string. This is useful to only show data with certain prefixes. For example URL protocols. | `&filter_start=https://` |
 | `filter_end` | string | Works like `filter` but it will only include strings that end with the passed string. This is useful to only show data with certain suffixes. For example URL protocols. | `&filter_start=https://` |
+
+
+### Array Size/Form Reduction Parameters
+
+| Parameter    | Type   |                                                                                                                                                                                                     | Example         |
+|--------------|--------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------|
+| `drop_start` | number | This parameter allows you to drop results in the response by passing a number. For example if you're trying to exclude the first two entities from a result, you can pass `drop_start` set to 2.  | `&drop_start=2" |
+| `drop_end`   | number | This parameter allows you to drop results in the response by passing a number. For example if you're trying to exclude the last two entities from a result, you can pass `drop_end` set to 2.  | `&drop_end=2" |
