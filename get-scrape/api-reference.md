@@ -43,3 +43,10 @@ This is the main endpoint to use GetScrape. This section contains a description 
 |--------------|--------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------|
 | `drop_start` | number | This parameter allows you to drop results in the response by passing a number. For example if you're trying to exclude the first two entities from a result, you can pass `drop_start` set to 2.  | `&drop_start=2" |
 | `drop_end`   | number | This parameter allows you to drop results in the response by passing a number. For example if you're trying to exclude the last two entities from a result, you can pass `drop_end` set to 2.  | `&drop_end=2" |
+
+
+### Browser Control Parameters
+
+| Parameter    | Type   |                                                                                                                                                                                                     | Example         |
+|--------------|--------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------|
+| `customjs`   | string  |  A custom JS evaluation you want to inject before the crawl operation. If passed we will inject this statement as a header `<script>` with a just in time model (script will be injected after loading and before crawling). Useful to force actions that are needed to perform the crawl operation correctly. | `&customjs=document.getElementById("demo"); myobj.remove();` |
