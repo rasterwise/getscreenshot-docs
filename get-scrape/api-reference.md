@@ -25,9 +25,13 @@ This is the main endpoint to use GetScrape. This section contains a description 
 | `extract`   | string | A comma-separated list of entities that you want GetScrape to automatically extract for you. Here is a list of available operations to extract entities: `emails`: extracts email addresses <br> `phones`: extracts US phone numbers <br> `dates`: extracts dates and gives them in ISO format <br> `lists`: extracts html lists (<ol> & <ul>) <br> `headings`: extracts html headings (h1,h2,h3,h4,h5) <br> `images`: extracts url images <br> `links`: extract hyperlinks <br> `rawdom`: gives a raw representation of the DOM | `&extract=dates,lists,links` |
 
 
-
-## Reduction Parameters
+### String Match Reduction Parameters
 
 | Parameter | Type   |                                                                                                                                                                                       | Example        |
 |-----------|--------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------|
-| `exclude` | string | Passing the exclude parameter set to a string will filter results that match that string. For example, `exclude=ads` will exclude any result in the arrays that contain the string ads. | `&exclude=ads" |
+| `exclude` | string | Passing the `exclude` parameter set to a string will exclude results that match that string. For example, `exclude=ads` will exclude any result in the arrays that contain the string `ads`. | `&exclude=ads` |
+| `exclude_start` | string | Works like `exclude` but it will only exclude strings that start with the passed string. This is useful to exclude data with certain prefixes. For example URL protocols. | `&exclude_start=http://` |
+| `exclude_end`  | string | Works like `exclude` but it will only exclude strings that end with the passed string. This is useful to exclude data with certain suffixes. For example file formats. | `&exclude_end=.svg`|
+| `filter`  | string | Passing the `filter` parameter set to a string will filter results that match that string. For example, `filter=ads` will only include results in the arrays that contain the string `ads`. You can think of `filter` as the opposite of `exclude`. | `&filter=ads`|
+| `filter_start` | string | Works like `filter` but it will only include strings that start with the passed string. This is useful to only show data with certain prefixes. For example URL protocols. | `&filter_start=https://` |
+| `filter_end` | string | Works like `filter` but it will only include strings that end with the passed string. This is useful to only show data with certain suffixes. For example URL protocols. | `&filter_start=https://` |
