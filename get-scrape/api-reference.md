@@ -41,8 +41,8 @@ This is the main endpoint to use GetScrape. This section contains a description 
 
 | Parameter    | Type   |                                                                                                                                                                                                     | Example         |
 |--------------|--------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------|
-| `drop_start` | number | This parameter allows you to drop results in the response by passing a number. For example if you're trying to exclude the first two entities from a result, you can pass `drop_start` set to 2.  | `&drop_start=2" |
-| `drop_end`   | number | This parameter allows you to drop results in the response by passing a number. For example if you're trying to exclude the last two entities from a result, you can pass `drop_end` set to 2.  | `&drop_end=2" |
+| `drop_start` | number | This parameter allows you to drop results in the response by passing a number. For example if you're trying to exclude the first two entities from a result, you can pass `drop_start` set to 2.  | `&drop_start=2` |
+| `drop_end`   | number | This parameter allows you to drop results in the response by passing a number. For example if you're trying to exclude the last two entities from a result, you can pass `drop_end` set to 2.  | `&drop_end=2` |
 
 
 ### Browser Control Parameters
