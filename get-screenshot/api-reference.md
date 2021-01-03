@@ -6,7 +6,7 @@ nav_order: 1
 
 # API Reference
 
-## GET `/v1/get-screenshot`
+## GET `https://api.rasterwise.com/v1/get-screenshot`
 
 This is the main endpoint to use GetScreenshot. This section contains a description of all the available query parameters to control the API, its behavior and the resulting captured screenshots.
 
