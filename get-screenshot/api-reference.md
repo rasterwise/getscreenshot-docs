@@ -66,7 +66,7 @@ This is the main endpoint to use GetScreenshot. This section contains a descript
 
 <hr>
 
-## GET `/v1/get-screenshot/legacy`
+## GET `https://api.rasterwise.com/v1/get-screenshot/legacy`
 
 ### What is the /legacy API?
 GetScreenshot is built on top of the latest versions of Puppeteer+Chromium. With the pass of time Puppeteer and Chromium have improved their performance resulting in a more reliable and consistent API.
@@ -77,7 +77,7 @@ We have been working hard in trying to keep the same rendering coverage as the p
 
 We think this is unlikely to affect anyone since we are talking about just a couple of obscure rendering scenarios that seem to be specific to very particular website implementations. However, if it happens to be that the new API breaks your case (again, this is highly unlikely), we still want to give you the option to access the previous version. We are also hopeful that the folks at Google will fix some of the issues that caused the case regressions, so we don't have to rely on the legacy API anymore.
 
-#### For how long would the /legacy API be available?
+### For how long would the /legacy API be available?
 Again, we can't stress enough that it is unlikely that you will need to use this API at all. This API is built on top of NodeJS 8.X, and its availability it's contingent on our cloud provider supporting this runtime in the long run. We expect the API to be available for at least another full year (maybe more).
 
 #### What methods are not available in the /legacy API?
@@ -89,7 +89,7 @@ The following methods are **NOT** available in the /legacy API:
 <hr>
 
 
-## GET `/v1/usage`
+## GET `https://api.rasterwise.com/v1/usage`
 
 This endpoint allows you to retrieve your current API usage. This endpoint uses a double security validation and therefore it requires both your registered email and the API Key for which you want to query current usage and available quota.
 
