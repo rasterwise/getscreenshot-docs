@@ -6,7 +6,7 @@ nav_order: 1
 
 # API Reference
 
-## GET `/v1/get-scrape`
+## GET `https://api.rasterwise.com/v1/get-scrape`
 
 This is the main endpoint to use GetScrape. This section contains a description of all the available query parameters to control the API, its behavior and crawl operation and the resulting response.
 
