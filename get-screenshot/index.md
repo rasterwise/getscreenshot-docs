@@ -10,9 +10,10 @@ nav_order: 0
 
 Generating screenshots just requires a single request to the GetScreenshot API. 
 By design, GetScreenshot only supports GET requests. In our experience this favors simplicity, usability and newbie friendliness.
-However, if you're interested in POST requests, please let us know since we have a Beta version of our endpoint that supports POST requests.
+However, if you're interested in POST requests, please let us know at support@rasterwise.com
 
-Here are some examples on how to generate a basic screenshot in the GetScreenshot API with some popular programming languages:
+
+Here are some examples across different languages of how to generate a basic screenshot in the GetScreenshot API:
 
 ### cURL
 ```
