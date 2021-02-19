@@ -23,5 +23,5 @@ and for less than the existing solutions.
 GetScrape is a high-level web scraping API that uses a headless browser to extract data from websites
 and focuses on the information you need and not on how is enclosed. (Coming Soon!)
 
-[Getting Started](#){: .btn .btn-purple }
-[API Reference](#){: .btn .btn-outline }
+[Getting Started](https://docs.rasterwise.com/get-scrape/){: .btn .btn-purple }
+[API Reference]([#](https://docs.rasterwise.com/get-scrape/api-reference)){: .btn .btn-outline }

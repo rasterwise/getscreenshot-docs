@@ -5,5 +5,3 @@ has_children: true
 ---
 
 # GetScrape API Documentation
-
-Coming soon!
