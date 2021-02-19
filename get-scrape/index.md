@@ -6,7 +6,7 @@ nav_order: 0
 
 # Getting Started With GetScrape
 
-*How to get started with GetScape simple API (5-10 mins) and start crawling/scraping via the GET API.*
+*How to get started with GetScrape simple API (5-10 mins) and start crawling/scraping via the GET API.*
 
 Performing crawaling/scraping operations just requires a single request to the GetScrape API. 
 By design, GetScrape only supports GET requests. In our experience this favors simplicity, usability and newbie friendliness.
