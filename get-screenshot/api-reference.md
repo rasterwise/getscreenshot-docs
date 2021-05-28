@@ -98,5 +98,5 @@ This endpoint allows you to retrieve your current API usage. This endpoint uses 
 
 | Parameter | Type   | Description                                                                             | Example                                                           |
 |-----------|--------|-----------------------------------------------------------------------------------------|-------------------------------------------------------------------|
-| `apikey`    | string | Your secret API Key. This is required to authenticate your request.                     | `?apikey=5WjESjB72Rb2JC7frBf026kBgg82DaPQIOxc` <br> *-Not an actual apikey-* |
-| `url`       | string | URL of the website / page you want to screenshot. Should start with http:// or https:// | `&url=https://google.com`                                              |    
+| `apikey`    | string | Your secret API Key.                   | `?apikey=5WjESjB72Rb2JC7frBf026kBgg82DaPQIOxc` <br> *-Not an actual apikey-* |
+| `email`       | string | Email address for the account. | `&email=john@doe.com`                                              |    
