@@ -64,6 +64,32 @@ This is the main endpoint to use GetScreenshot. This section contains a descript
 |-----------|--------|--------------------------------------------------------------------------------|---------------|
 | `strategy`  | number | If set to 1, changes the rendering strategy to our alternative rendering flow. | `&strategy=1` |
 
+### Bypass Login Parameters
+
+*Note: Before using the bypass login functionality please have in mind that this is a highly experimental feature and its stability or reliability isn't guaranteed.*
+
+Our bypass login strategy depends on instuction data that needs to be passed to the `bplogin` param as a URL encoded string. The instruction data needed is the following:
+
+* Login Page URL
+* Username (or email) needed to bypass the login.
+* Password needed to bypass the login.
+* Username Field CSS Selector
+* Password CSS Selector
+
+To pass this data you need to form an encoded comma separated string. For example an instruction like the following `example.com/login,jj@example.com,24h3dnfbnkjbnf,input#user,input#password` should ultimated be passed as `example.com%2Flogin%2Cjj%40example.com%2C24h3dnfbnkjbnf%2Cinput%23user%2Cinput%23password`.
+
+Needless to say that this feature should be used carefully since you will be passing credentials for an online resource. Make sure that you understand the risks of revealing authentication data to any third party. Although your credentials are never logged into our systems and they only exist in memory for the duration of the screenshot process, we highly recommend that you only give us credentials that were created for the specific purpose of being handed to and used by GetScreenshot as part of your screenshot needs.
+
+Please **DO NOT** pass credentials that are being used regularly by you or any other person in a day to day authentication context. If you insist on passing your personal credentials, please remember that GetScreenshot is not responsible for their misuse since we don't control the whole end to end life cycle of your requests. 
+
+GetScreenshot will use the instruction data to authenticate against the protected website and then will navigate to the target URL to finish the screenshot operation. 
+
+If you have questions about this feature please don't hesitate to contact us at support@rasterwise.com
+
+| Parameter | Type   | Description                                                                    | Example       |
+|-----------|--------|--------------------------------------------------------------------------------|---------------|
+| `bplogin`  | URL Encoded String | An encoded comma separated string with login url, username, password, username field CSS selector, password field CSS selector | `&bplogin=example.com%2Flogin%2Cjj%40example.com%2C24h3dnfbnkjbnf%2Cinput%23user%2Cinput%23password` |
+
 <hr>
 
 ## GET `https://api.rasterwise.com/v1/get-screenshot/legacy`
