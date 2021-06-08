@@ -45,9 +45,7 @@ If you have a need for cached API calls, we can provide a dedicated cached endpo
 
 ### Screenshot Caching and Hotlinking
 
-Screenshots are saved for 30 days in a secure Amazon S3 Bucket. You can access and retrieve your screenshot image as many times as you want with no extra charge during the next 30 days after the screenshot was generated. You can also hotlink to the image but please note that the image will get deleted after 30 days, no exceptions. 
-
-If you need a permanent link to your image we recommend you to use the S3 Bucket Save option. This feature allows you to pass a user/key pair to our API that will be used to save the image to your own Amazon S3 Bucket. This feature is not publicly available, so please contact us for further instructions.
+Screenshots are saved for 30 days in a secure Amazon S3 Bucket or Google Cloud Storage Bucket. You can access and retrieve your screenshot image as many times as you want with no extra charge during the next 30 days after the screenshot was generated. You can also hotlink to the image but please note that the image will get deleted after 30 days, no exceptions. 
 
 <hr>
 
