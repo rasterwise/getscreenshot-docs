@@ -8,7 +8,7 @@ nav_order: 0
 
 *How to get started with GetScreenshot simple API (5-10 mins) and start generating screenshots via the GET API.*
 
-Generating screenshots just requires a single request to the GetScreenshot API. 
+Generating screenshots just requires a single request to the [GetScreenshot API](https://www.getscreenshotapi.com). 
 By design, GetScreenshot only supports GET requests. In our experience this favors simplicity, usability and newbie friendliness.
 However, if you're interested in POST requests, please let us know at support@rasterwise.com
 
