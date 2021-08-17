@@ -76,7 +76,7 @@ Our bypass login strategy depends on instuction data that needs to be passed to 
 * Username Field CSS Selector
 * Password CSS Selector
 
-To pass this data you need to form an encoded comma separated string. For example an instruction like the following `example.com/login,jj@example.com,24h3dnfbnkjbnf,input#user,input#password` should ultimated be passed as `example.com%2Flogin%2Cjj%40example.com%2C24h3dnfbnkjbnf%2Cinput%23user%2Cinput%23password`.
+To pass this data you need to form an encoded comma separated string. For example an instruction like the following `https://example.com/login,jj@example.com,24h3dnfbnkjbnf,input#user,input#password` should ultimately be passed as `https%3A%2F%2Fexample.com%2Flogin%2Cjj%40example.com%2C24h3dnfbnkjbnf%2Cinput%23user%2Cinput%23password`.
 
 Needless to say that this feature should be used carefully since you will be passing credentials for an online resource. Make sure that you understand the risks of revealing authentication data to any third party. Although your credentials are never logged into our systems and they only exist in memory for the duration of the screenshot process, we highly recommend that you only give us credentials that were created for the specific purpose of being handed to and used by GetScreenshot as part of your screenshot needs.
 
@@ -89,6 +89,32 @@ If you have questions about this feature please don't hesitate to contact us at 
 | Parameter | Type   | Description                                                                    | Example       |
 |-----------|--------|--------------------------------------------------------------------------------|---------------|
 | `bplogin`  | URL Encoded String | An encoded comma separated string with login url, username, password, username field CSS selector, password field CSS selector | `&bplogin=example.com%2Flogin%2Cjj%40example.com%2C24h3dnfbnkjbnf%2Cinput%23user%2Cinput%23password` |
+
+### Bypass Login Instruction
+
+NOTE: This guide is mostly tailored for Zapier Users
+
+If you are a Zapier user you may not be entirely sure on how to form a bypass instruction. Don't worry forming an instruction that can be used in the context of Zapier is quite simple.
+
+If you need to bypass a login through Zapier you need to provide the following information in a comma separated format:
+
+* Login Page URL
+* Username (or email) needed to bypass the login.
+* Password needed to bypass the login.
+* Username Field CSS Selector
+* Password CSS Selector
+
+This will result in an instruction that looks similar to the following: `https://example.com/login,jj@example.com,24h3dnfbnkjbnf,input#user,input#password`.
+
+Although the first three values (login url, username and password) are quite straight-forward you might not know what's a CSS selector and how to get it.
+Fortunately CSS selectors are quite simple. CSS Selectors are identifiers that point to an element in a website UI. In this case you need to tell GetScreenshot
+the fields in which to enter the username and password you provided in the first two fields.
+
+To obtain the CSS selectors you just need to do a small operation in your browser. Here is a quick YouTube video that explains how to do it: [How to Get CSS Selector](https://www.youtube.com/watch?v=GMk7ZLuo6Po)
+
+When copying the CSS selector of the username field and password field, make sure you're actually copying the selector of the actual form field. Most likely this would be a `<input>` element in both cases.
+
+If you have any questions please reach out to support@rasterwise.com
 
 <hr>
 
