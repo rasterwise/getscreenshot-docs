@@ -24,7 +24,7 @@ This is the main endpoint to use GetScrape. This section contains a description 
 | `extract` | string | A comma-separated list of entities that you want GetScrape to automatically extract for you. Here is a list of available operations to extract entities: `emails`: extracts email addresses <br> `phones`: extracts US phone numbers <br> `dates`: extracts dates and gives them in ISO format <br> `lists`: extracts html lists (<ol> & <ul>) <br> `headings`: extracts html headings (h1,h2,h3,h4,h5) <br> `images`: extracts url images <br> `links`: extract hyperlinks <br> `rawdom`: gives a raw representation of the DOM | `&extract=dates,lists,links` |
 | `scope`   | string | This parameter allows you to pass a selector to scope the crawling operation into a particular DOM node. When passed it will perform the crawling only inside the matched node. Pass DOM element selectors in jQuery fashion. https://api.jquery.com/category/selectors/                                                                                                                                                                                                                                                         | `&scope=#someid > div > li`  |
 
-### String Match Reduction Parameters
+### Include or Exclude Results with a Matching Word
 
 | Parameter       | Type   |                                                                                                                                                                                                                                                     | Example                  |
 | --------------- | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------ |
@@ -35,19 +35,25 @@ This is the main endpoint to use GetScrape. This section contains a description 
 | `filter_start`  | string | Works like `filter` but it will only include strings that start with the passed string. This is useful to only show data with certain prefixes. For example URL protocols.                                                                          | `&filter_start=https://` |
 | `filter_end`    | string | Works like `filter` but it will only include strings that end with the passed string. This is useful to only show data with certain suffixes. For example URL protocols.                                                                            | `&filter_start=https://` |
 
-### Array Shape: Drop Results from Start or End of Array
+### Drop Results from Start or End of Array
 
 | Parameter    | Type   |                                                                                                                                                                                                  | Example         |
 | ------------ | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------- |
 | `drop_start` | number | This parameter allows you to drop results in the response by passing a number. For example if you're trying to exclude the first two entities from a result, you can pass `drop_start` set to 2. | `&drop_start=2` |
 | `drop_end`   | number | This parameter allows you to drop results in the response by passing a number. For example if you're trying to exclude the last two entities from a result, you can pass `drop_end` set to 2.    | `&drop_end=2`   |
 
-### Array Shape: Get Results with Even or Odd Indexes Only
+### Get Results with Even or Odd Indexes Only
 
 | Parameter   | Type    |                                                                        | Example           |
 | ----------- | ------- | ---------------------------------------------------------------------- | ----------------- |
 | `even_only` | boolean | If set to `true` only the results with an even index will be returned. | `&even_only=true` |
 | `odd_only`  | boolean | If set to `true` only the results with an odd index will be returned.  | `&odd_only=true`  |
+
+### API Results Workflow
+
+| Parameter | Type | Description | Example |
+| --------- | ------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------ | | `&email=john@example.com` |
+| `webhook` | string | A valid endpoint URL that can receive and respond to a **POST** request (preferably an endpoint that you control). If set, we will send a **POST** request to the provided endpoint (webhook listener). | `&webhook=https://webhook.myapp.com` |
 
 ### Browser Control Parameters
 
