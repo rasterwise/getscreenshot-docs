@@ -51,8 +51,8 @@ This is the main endpoint to use GetScrape. This section contains a description 
 
 ### API Results Workflow
 
-| Parameter | Type | Description | Example |
-| --------- | ------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------ | | `&email=john@example.com` |
+| Parameter | Type   | Description                                                                                                                                                                                             | Example                              |
+| --------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------ |
 | `webhook` | string | A valid endpoint URL that can receive and respond to a **POST** request (preferably an endpoint that you control). If set, we will send a **POST** request to the provided endpoint (webhook listener). | `&webhook=https://webhook.myapp.com` |
 
 ### Browser Control Parameters
