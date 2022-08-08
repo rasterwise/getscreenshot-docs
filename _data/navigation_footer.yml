@@ -1,0 +1,10 @@
+# Footer navigation links
+
+- title: Home
+  url: /
+
+- title: Blog
+  url: https://blog.rasterwise.com
+
+- title: Contact
+  url: "mailto: support@rasterwise.com"
