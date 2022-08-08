@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>/v1/get-screenshot | Rasterwise Docs</title>
+<meta name="generator" content="Jekyll v3.4.1" />
+<meta property="og:title" content="/v1/get-screenshot" />
+<meta name="author" content="Juan J. Ramirez" />
+<meta property="og:locale" content="en" />
+<meta name="description" content="Sections in this reference" />
+<meta property="og:description" content="Sections in this reference" />
+<link rel="canonical" href="http://localhost:4000/docs/getscreenshot/api-reference-0/" />
+<meta property="og:url" content="http://localhost:4000/docs/getscreenshot/api-reference-0/" />
+<meta property="og:site_name" content="Rasterwise Docs" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-08-07T23:17:22-05:00" />
+<script type="application/ld+json">
+{"url":"http://localhost:4000/docs/getscreenshot/api-reference-0/","@type":"BlogPosting","headline":"/v1/get-screenshot","dateModified":"2022-08-07T23:17:22-05:00","datePublished":"2022-08-07T23:17:22-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/docs/getscreenshot/api-reference-0/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/docs-logo.svg"},"name":"Juan J. Ramirez"},"author":{"@type":"Person","name":"Juan J. Ramirez"},"description":"Sections in this reference","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <meta property="og:image" content="http://localhost:4000/uploads/docs-logo.svg"/>
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="shortcut icon" type="image/png" href="/uploads/favicon.png" >
+  <link rel="alternate" type="application/rss+xml" title="Rasterwise Docs" href="/feed.xml">
+  <script src="/assets/js/main.js"></script>
+  
+    <script>
+function searchResults(form) {
+
+    var currentItem = null;
+    var search = document.getElementById(form);
+    var results = document.getElementById(form + "-results");
+    var toggle = document.getElementById(form + "-toggle");
+
+    function removeActive() {
+        for (i = 0; i < results.children.length; i++) {
+            results.children[i].classList.remove("uk-background-muted");
+        }
+    }
+
+    // Detect all clicks on the document
+    document.addEventListener("click", function(event) {
+
+        var isClickSearch = false;
+        var isClickResults = false;
+        var isClickSearchToggle = false;
+
+        if (search !== null) {
+            isClickSearch = search.contains(event.target);
+        }
+
+        if (results !== null) {
+            isClickResults = results.contains(event.target);
+        }
+
+        if (toggle !== null) {
+            isClickSearchToggle = toggle.contains(event.target);
+        }
+
+        if (isClickSearch || isClickSearchToggle) {
+            results.style.display = "block";
+        }        
+
+        if (!isClickResults && !isClickSearch && !isClickSearchToggle) {
+            results.style.display = "none";
+        }        
+        
+    });    
+
+    results.addEventListener("mouseover", function(event) {
+
+        removeActive();
+        event.target.parentElement.classList.add("uk-background-muted");
+        currentItem = null;
+
+    });
+
+    results.addEventListener("mouseout", function(event) {
+        event.target.parentElement.classList.remove("uk-background-muted");
+    });
+
+
+    search.addEventListener("keyup", function(event) {
+
+        var resultItems = results.children;
+        var resultCount = results.children.length;
+                                
+        if (event.keyCode === 40) {
+
+            if (currentItem < (resultCount - 1)) {
+                if (currentItem === null) {
+                    currentItem = 0;
+                } else {
+                    removeActive();
+                    currentItem++;
+                }
+                removeActive();
+                resultItems[currentItem].classList.add("uk-background-muted");
+            }
+            
+        } else if (event.keyCode === 38) {
+
+            if (currentItem > 0) {
+                if (currentItem === null) {
+                    currentItem = 0;
+                } else {
+                    removeActive();
+                    currentItem--;
+                }
+                removeActive();
+                resultItems[currentItem].classList.add("uk-background-muted");
+            }
+
+        } else if (event.keyCode === 13) {
+
+            resultItems[currentItem].children[0].click();
+
+        }
+
+    });
+
+}
+</script>
+  
+  
+  
+</head>
+
+    <body>
+
+    
+        <div data-uk-sticky="animation: uk-animation-slide-top; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; cls-inactive: uk-navbar-transparent; top: 200">
+    <nav class="uk-navbar-container">
+        <div class="uk-container">
+            <div data-uk-navbar>
+                <div class="uk-navbar-left">
+                    <a class="uk-navbar-item uk-logo uk-visible@m" href="/"><img src="http://localhost:4000/uploads/docs-logo.svg" alt="Rasterwise Docs"></a>
+                    
+                        <a class="uk-navbar-toggle uk-hidden@m" href="#offcanvas-docs" data-uk-toggle><span data-uk-navbar-toggle-icon></span> <span class="uk-margin-small-left">Docs</span></a>
+                    
+
+                    <ul class="uk-navbar-nav uk-visible@m">
+                        
+                            
+                            
+                            
+                                
+                                    
+                                        <li><a href="/" >Home</a></li>
+                                                                                                        
+                                
+                            
+                        
+                            
+                            
+                            
+                                
+                                    
+                                        <li><a href="/docs/getscreenshot/getting-started/" >Docs</a></li>
+                                                                                                        
+                                
+                            
+                        
+                            
+                            
+                            
+                                
+                                    
+                                        <li><a href="https://blog.rasterwise.com" target="_blank" >Blog</a></li>
+                                                                                                        
+                                
+                            
+                        
+                    </ul>
+                </div>
+                <div class="uk-navbar-center uk-hidden@m">
+                    <a class="uk-navbar-item uk-logo" href="/"><img src="http://localhost:4000/uploads/docs-logo.svg" alt="Rasterwise Docs"></a>
+                </div>
+                <div class="uk-navbar-right">
+                    
+                        
+                            <div>
+                                <a id="search-navbar-toggle" class="uk-navbar-toggle" uk-search-icon href="#"></a>
+                                <div class="uk-drop uk-background-default uk-border-rounded" uk-drop="mode: click; pos: left-center; offset: 0">
+                                    <form class="uk-search uk-search-navbar uk-width-1-1" onsubmit="return false;">
+                                        <input id="search-navbar" class="uk-search-input" type="search" placeholder="Search for answers" autofocus autocomplete="off">
+                                    </form>
+                                    <ul id="search-navbar-results" class="uk-position-absolute uk-width-1-1 uk-list"></ul>
+                                </div>
+                            </div>
+                            <script>
+                            SimpleJekyllSearch({
+                                searchInput: document.getElementById('search-navbar'),
+                                resultsContainer: document.getElementById('search-navbar-results'),
+                                noResultsText: '<li class="no-results">No results found</li>',
+                                searchResultTemplate: '<li><a href="{url}">{title}</a></li>',
+                                json: "/search.json"
+                            });
+                            searchResults("search-navbar");
+                            </script>
+                        
+                    
+
+                    <ul class="uk-navbar-nav uk-visible@m">
+                        
+                            
+                            
+                            
+                                
+                                    <li><div class="uk-navbar-item"><a class="uk-button uk-button-success" href="mailto: support@rasterwise.com" >Contact</a></div></li>
+                                
+                            
+                        
+                    </ul>
+
+                    
+                        <a class="uk-navbar-toggle uk-hidden@m" href="#offcanvas" data-uk-toggle><span data-uk-navbar-toggle-icon></span> <span class="uk-margin-small-left">Menu</span></a>
+                    
+
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
+    
+
+    <div class="uk-section">
+    <div class="uk-container">
+        <div class="uk-grid-large" data-uk-grid>
+
+            <div class="sidebar-fixed-width uk-visible@m">
+                <div class="sidebar-docs uk-position-fixed uk-margin-top">
+                    
+                    <h5>GetScreenshot</h5>
+                    <ul class="uk-nav uk-nav-default doc-nav">
+                    
+                      
+                      
+                      <li class=""><a href="/docs/getscreenshot/getting-started/">Getting Started</a></li>
+                    
+                      
+                      
+                      <li class=""><a href="/docs/getscreenshot/api-overview/">API Overview</a></li>
+                    
+                      
+                      
+                      <li class="uk-active"><a href="/docs/getscreenshot/api-reference-0/">/v1/get-screenshot</a></li>
+                    
+                      
+                      
+                      <li class=""><a href="/docs/getscreenshot/api-reference-1/">/v1/usage</a></li>
+                    
+                    </ul>
+                    
+                    <h5>GetScrape</h5>
+                    <ul class="uk-nav uk-nav-default doc-nav">
+                    
+                      
+                      
+                      <li class=""><a href="/docs/getscrape/getting-started/">Getting Started</a></li>
+                    
+                      
+                      
+                      <li class=""><a href="/docs/getscrape/api-reference-0/">/v1/get-scrape</a></li>
+                    
+                      
+                      
+                      <li class=""><a href="/docs/getscreenshot/api-reference-1/">/v1/usage</a></li>
+                    
+                    </ul>
+                    
+                    <h5>Integrations</h5>
+                    <ul class="uk-nav uk-nav-default doc-nav">
+                    
+                      
+                      
+                      <li class=""><a href="/docs/connections/zapier/">Connecting to Zapier</a></li>
+                    
+                      
+                      
+                      <li class=""><a href="/docs/connections/sheets/">Connecting to Google Sheets</a></li>
+                    
+                    </ul>
+                    
+                </div>
+            </div>
+
+            <div class="uk-width-1-1 uk-width-expand@m">
+
+                <article class="uk-article">
+
+                    <h1 class="uk-article-title">/v1/get-screenshot</h1>
+
+                    
+
+                    <div class="uk-article-meta uk-margin-top uk-margin-medium-bottom uk-flex uk-flex-middle">
+                        
+
+
+  
+  <img class="uk-border-circle avatar" src="http://localhost:4000/uploads/juan.jpg" alt="Juan J. Ramirez">
+
+
+<div>
+  
+    Written by <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Juan J. Ramirez</span></span><br>
+  
+  <time datetime="2022-08-07T23:17:22-05:00" itemprop="datePublished">
+    
+    Aug 7, 2022
+  </time>
+</div>
+                    </div>
+
+                    <div class="article-content link-primary">
+                        <h4 class="no_toc" id="sections-in-this-reference">Sections in this reference</h4>
+<ul id="markdown-toc">
+  <li><a href="#endpoint" id="markdown-toc-endpoint">Endpoint</a></li>
+  <li><a href="#required-parameters" id="markdown-toc-required-parameters">Required Parameters</a></li>
+  <li><a href="#format-parameters" id="markdown-toc-format-parameters">Format Parameters</a></li>
+  <li><a href="#dimensionsviewport-parameters" id="markdown-toc-dimensionsviewport-parameters">Dimensions/Viewport Parameters</a></li>
+  <li><a href="#modified-rendering-parameters" id="markdown-toc-modified-rendering-parameters">Modified Rendering Parameters</a></li>
+  <li><a href="#pre-screenshot-action-and-browser-config-parameters" id="markdown-toc-pre-screenshot-action-and-browser-config-parameters">Pre-Screenshot Action and Browser Config Parameters</a></li>
+  <li><a href="#api-result-workflow-parameters" id="markdown-toc-api-result-workflow-parameters">API Result Workflow Parameters</a></li>
+  <li><a href="#rendering-strategy-parameters" id="markdown-toc-rendering-strategy-parameters">Rendering Strategy Parameters</a></li>
+  <li><a href="#bypass-login-parameters" id="markdown-toc-bypass-login-parameters">Bypass Login Parameters</a></li>
+  <li><a href="#bypass-login-instruction" id="markdown-toc-bypass-login-instruction">Bypass Login Instruction</a></li>
+</ul>
+
+<h3 id="endpoint">Endpoint</h3>
+
+<p>GET <code class="highlighter-rouge">https://api.rasterwise.com/v1/get-screenshot</code></p>
+
+<p>Use this endpoint to invoke the API and modify the request with the parameters below.</p>
+
+<h3 id="required-parameters">Required Parameters</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">apikey</code></td>
+      <td>string</td>
+      <td>Your secret API Key. This is required to authenticate your request.</td>
+      <td><code class="highlighter-rouge">?apikey=5WjESjB72Rb2JC7frBf026kBgg82DaPQIOxc</code> <br /> <em>-Not an actual apikey-</em></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">url</code></td>
+      <td>string</td>
+      <td>URL of the website / page you want to screenshot. Should start with http:// or https://</td>
+      <td><code class="highlighter-rouge">&amp;url=https://google.com</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="format-parameters">Format Parameters</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">format</code></td>
+      <td>string</td>
+      <td>The file type/format in which you want to get your capture. It can be either <code class="highlighter-rouge">png</code> or <code class="highlighter-rouge">jpeg</code>. Defaults to <code class="highlighter-rouge">png</code></td>
+      <td><code class="highlighter-rouge">&amp;format=png</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">pdf</code></td>
+      <td>string</td>
+      <td>If set to <code class="highlighter-rouge">true</code>, any image format will be ignored and instead an A4 PDF of the passed website will be generated. Websites will render the same as if you were printing it from your browser. Defaults to <code class="highlighter-rouge">false</code></td>
+      <td><code class="highlighter-rouge">&amp;pdf=true</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">urlasfilename</code></td>
+      <td>boolean</td>
+      <td>By default GetScreenshot return screenshots with a random filename. If this parameter is set to <code class="highlighter-rouge">true</code>, the resulting screenshot filename will contain the target screenshot URL. Defaults to <code class="highlighter-rouge">false</code></td>
+      <td><code class="highlighter-rouge">&amp;urlasfilename=true</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="dimensionsviewport-parameters">Dimensions/Viewport Parameters</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">height</code></td>
+      <td>number</td>
+      <td>Height in pixels of the viewport when taking the page screenshot. Defaults to <code class="highlighter-rouge">800</code></td>
+      <td><code class="highlighter-rouge">&amp;height=800</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">width</code></td>
+      <td>number</td>
+      <td>Width in pixels of the viewport when taking the page screenshot. Defaults to <code class="highlighter-rouge">1280</code></td>
+      <td><code class="highlighter-rouge">&amp;width=1200</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">fullpage</code></td>
+      <td>boolean</td>
+      <td>If set to <code class="highlighter-rouge">true</code>, we will calculate the full height of the website and used it as the <code class="highlighter-rouge">height</code> in pixels of the viewport when taking the page screenshot. Any passed height value will be ignored. Defaults to <code class="highlighter-rouge">false</code></td>
+      <td><code class="highlighter-rouge">&amp;fullpage=true</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">preset</code></td>
+      <td>string</td>
+      <td>If set, we will control the dimension and user-agent to simulate the preset device or graphics display resolution. If a preset value is passed, we will ignore other passed dimension parameters. This parameter can accept any of the following presets: <code class="highlighter-rouge">iphone5</code> (iPhone 5) <br /> <code class="highlighter-rouge">iphone678</code> (iPhone 6/7/8)<br /> <code class="highlighter-rouge">iphone678_plus</code> (iPhone 6/7/8 +)<br /> <code class="highlighter-rouge">iphonex</code> (iPhone X / XS)<br /> <code class="highlighter-rouge">iphone12</code> (iPhone 12 / 13)<br /> <code class="highlighter-rouge">pixel2</code> (Google Pixel 2)<br /> <code class="highlighter-rouge">pixel2_xl</code> (Google Pixel 2 XL)<br /> <code class="highlighter-rouge">ipad</code> (iPad in Vertical)<br /> <code class="highlighter-rouge">ipadpro</code> (iPad Pro Vertical)<br /> <code class="highlighter-rouge">hvga</code> (320 x 480)<br /> <code class="highlighter-rouge">wvga</code> (480 x 800)<br /> <code class="highlighter-rouge">dvga</code> (640 x 960)<br /> <code class="highlighter-rouge">wxga_v</code> (768 x 1280)<br /> <code class="highlighter-rouge">xga</code> (1024 x 768)<br /> <code class="highlighter-rouge">wxga_s</code> (1280 x 800)<br /> <code class="highlighter-rouge">wxga_l</code> (1366 x 768)<br /> <code class="highlighter-rouge">sxga</code> (1280 x 1024)<br /> <code class="highlighter-rouge">wsxga_plus</code> (1680 x 1050)</td>
+      <td><code class="highlighter-rouge">&amp;preset=dvga</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">devicefactor</code></td>
+      <td>number</td>
+      <td>Changes the device scale factor. If set to a higher value will result in a higher device pixel ratio. Defaults to <code class="highlighter-rouge">1</code></td>
+      <td><code class="highlighter-rouge">&amp;devicefactor=2</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">noheight</code></td>
+      <td>boolean</td>
+      <td>Allows <code class="highlighter-rouge">fullpage</code> parameter to overwrite preset height. This parameter is meant to be used with in combination with a <code class="highlighter-rouge">preset</code> and <code class="highlighter-rouge">fullpage=true</code>. Defaults to <code class="highlighter-rouge">false</code>.</td>
+      <td><code class="highlighter-rouge">&amp;noheight=true</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">element</code></td>
+      <td>string (CSS selector)</td>
+      <td>If you need to target specific DOM elements instead of taking dimension-based screenshots you can use the DOM capture parameters to target those elements. Pass DOM element selectors in <a href="https://api.jquery.com/category/selectors/">CSS Selector fashion</a>. For example. if targeting a div with the id colordiv you can target it by passing the parameter <code class="highlighter-rouge">#colordiv</code>.</td>
+      <td><code class="highlighter-rouge">&amp;element=#colordiv</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="modified-rendering-parameters">Modified Rendering Parameters</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">highlight</code></td>
+      <td>string</td>
+      <td>A custom word or phrase you want to highlight. If passed, GetScreenshot will look for that string on the website and highlight all its instances with bright-yellow box.</td>
+      <td><code class="highlighter-rouge">&amp;highlight=apple</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">customjs</code></td>
+      <td>string</td>
+      <td>A custom JS evaluation you want to inject before the capture. If passed we will inject this statement as a header <script> with a just in time model, after all the required operations and just before the capture operation. This is important to have in mind when passing JS that changes the rendering.</script></td>
+      <td><code class="highlighter-rouge">&amp;customjs=alert("Injected JS");</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">customcss</code></td>
+      <td>string</td>
+      <td>A custom CSS style you want to inject before the capture. If passed we will inject the style declaration as a header <style> just before the capture operation.</style></td>
+      <td><code class="highlighter-rouge">&amp;customcss=#demo {color: red }</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">hidemsg</code></td>
+      <td>boolean</td>
+      <td>If set to <code class="highlighter-rouge">true</code>, we will hide message, chat and customer support clients. Currently hides the following clients: Intercom, Drift, Facebook and Tawk (partiallly). Defaults to <code class="highlighter-rouge">false</code></td>
+      <td><code class="highlighter-rouge">&amp;hidemsg=true</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">hidecookie</code></td>
+      <td>boolean</td>
+      <td>If set to <code class="highlighter-rouge">true</code>, we will hide cookie disclaimers that will usually appear as floating boxes or fixed containers. The hiding is not guaranteed but it has a pretty broad coverage and the underlying hiding heuristic is updated weekly. Defaults to <code class="highlighter-rouge">false</code></td>
+      <td><code class="highlighter-rouge">&amp;hidecookie=true</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">hideelement</code></td>
+      <td>string (CSS selector)</td>
+      <td>Allows you to hide a page element by passing its element selectors in <a href="https://api.jquery.com/category/selectors/">CSS Selector fashion</a>. For example. if you want to hide a div with the id “ad_div” you can do so by passing the parameter <code class="highlighter-rouge">#ad_div</code>.</td>
+      <td><code class="highlighter-rouge">&amp;hideelement=#ad_div</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">forcetr</code></td>
+      <td>boolean</td>
+      <td>If set to <code class="highlighter-rouge">true</code>, the website background will be forced to be transparent. Defaults to <code class="highlighter-rouge">false</code></td>
+      <td><code class="highlighter-rouge">&amp;forcetr=true</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="pre-screenshot-action-and-browser-config-parameters">Pre-Screenshot Action and Browser Config Parameters</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">click</code></td>
+      <td>array (as string)</td>
+      <td>The click parameter will dispatch a click at the start of the rendering flow to the passed coordinates or dom element. For example if you need to click in the coordinates X = 20px and Y = 100px you can pass an array [20, 100. If you need to click on a button or element you can pass the selector of said element.</td>
+      <td><code class="highlighter-rouge">&amp;click=[20,10]</code> or <code class="highlighter-rouge">&amp;click=#demobtn</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">cookie</code></td>
+      <td>string</td>
+      <td>Allows you to set a cookie by passing it’s key and value in a comma separated fashion.</td>
+      <td><code class="highlighter-rouge">&amp;cookie=session,31239e81293undb1db2hgr812gr</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="api-result-workflow-parameters">API Result Workflow Parameters</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">email</code></td>
+      <td>string</td>
+      <td>A valid email address. If set, we will send a formatted email to this email address including the captured image and the details of the capture (capture time and URL).</td>
+      <td><code class="highlighter-rouge">&amp;email=john@example.com</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">webhook</code></td>
+      <td>string</td>
+      <td>A valid endpoint URL that can receive and respond to a <strong>POST</strong> request (preferably an endpoint that you control). If set, we will send a <strong>POST</strong> request with the final response of the original call, to the provided endpoint (webhook listener). For your convenience, we send the response in the body and <code class="highlighter-rouge">queryStringParameters</code> of the request.</td>
+      <td><code class="highlighter-rouge">&amp;webhook=https://webhook.myapp.com</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="rendering-strategy-parameters">Rendering Strategy Parameters</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">strategy</code></td>
+      <td>number</td>
+      <td>If set to <code class="highlighter-rouge">1</code> or <code class="highlighter-rouge">2</code>, changes the rendering strategy to one of our alternative rendering flows. If the default rendering strategy fails to produce an accurate screenshot, we recommend experimenting with this parameter since it will in many cases fix ad-hoc rendering issues that are not covered by the standard rendering technique.</td>
+      <td><code class="highlighter-rouge">&amp;strategy=1</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">timewait</code></td>
+      <td>number</td>
+      <td>This parameter receives an extra time wait in ms. GetScreenshot goes through a rendering execution flow that optimizes for accuracy. To accomplish this, the execution flow introduces arbitrary waits that fix common rendering issues. However, there are instances in which an extra wait will be required to deliver a correct screenshot. In particular websites that perform some extended operation. To address this we make this parameter available so you can increase the wait period before taking the screenshot. We recommend starting at <code class="highlighter-rouge">5000</code> with <code class="highlighter-rouge">1000</code> increments. However be advised that our endpoint times out at 30 seconds, so using this parameter will increase the chances of your call timing out. Use this parameter with caution. Defaults to <code class="highlighter-rouge">2000</code></td>
+      <td><code class="highlighter-rouge">&amp;timewait=5000</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="bypass-login-parameters">Bypass Login Parameters</h3>
+
+<p><em>Note: Before using the bypass login functionality please have in mind that this is a highly experimental feature and its stability or reliability isn’t guaranteed.</em></p>
+
+<p>Our bypass login strategy depends on instuction data that needs to be passed to the <code class="highlighter-rouge">bplogin</code> param as a URL encoded string. The instruction data needed is the following:</p>
+
+<ul>
+  <li>Login Page URL</li>
+  <li>Username (or email) needed to bypass the login.</li>
+  <li>Password needed to bypass the login.</li>
+  <li>Username Field CSS Selector</li>
+  <li>Password CSS Selector</li>
+</ul>
+
+<p>To pass this data you need to form an encoded comma separated string. For example an instruction like the following <code class="highlighter-rouge">https://example.com/login,jj@example.com,24h3dnfbnkjbnf,input#user,input#password</code> should ultimately be passed as <code class="highlighter-rouge">https%3A%2F%2Fexample.com%2Flogin%2Cjj%40example.com%2C24h3dnfbnkjbnf%2Cinput%23user%2Cinput%23password</code>.</p>
+
+<p>Needless to say that this feature should be used carefully since you will be passing credentials for an online resource. Make sure that you understand the risks of revealing authentication data to any third party. Although your credentials are never logged into our systems and they only exist in memory for the duration of the screenshot process, we highly recommend that you only give us credentials that were created for the specific purpose of being handed to and used by GetScreenshot as part of your screenshot needs.</p>
+
+<p>Please <strong>DO NOT</strong> pass credentials that are being used regularly by you or any other person in a day to day authentication context. If you insist on passing your personal credentials, please remember that GetScreenshot is not responsible for their misuse since we don’t control the whole end to end life cycle of your requests.</p>
+
+<p>GetScreenshot will use the instruction data to authenticate against the protected website and then will navigate to the target URL to finish the screenshot operation.</p>
+
+<p>If you have questions about this feature please don’t hesitate to contact us at support@rasterwise.com</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">bplogin</code></td>
+      <td>URL Encoded String</td>
+      <td>An encoded comma separated string with login url, username, password, username field CSS selector, password field CSS selector</td>
+      <td><code class="highlighter-rouge">&amp;bplogin=example.com%2Flogin%2Cjj%40example.com%2C24h3dnfbnkjbnf%2Cinput%23user%2Cinput%23password</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="bypass-login-instruction">Bypass Login Instruction</h3>
+
+<p>NOTE: This guide is mostly tailored for Zapier Users</p>
+
+<p>If you are a Zapier user you may not be entirely sure on how to form a bypass instruction. Don’t worry forming an instruction that can be used in the context of Zapier is quite simple.</p>
+
+<p>If you need to bypass a login through Zapier you need to provide the following information in a comma separated format:</p>
+
+<ul>
+  <li>Login Page URL</li>
+  <li>Username (or email) needed to bypass the login.</li>
+  <li>Password needed to bypass the login.</li>
+  <li>Username Field CSS Selector</li>
+  <li>Password CSS Selector</li>
+</ul>
+
+<p>This will result in an instruction that looks similar to the following: <code class="highlighter-rouge">https://example.com/login,jj@example.com,24h3dnfbnkjbnf,input#user,input#password</code>.</p>
+
+<p>Although the first three values (login url, username and password) are quite straight-forward you might not know what’s a CSS selector and how to get it.
+Fortunately CSS selectors are quite simple. CSS Selectors are identifiers that point to an element in a website UI. In this case you need to tell GetScreenshot
+the fields in which to enter the username and password you provided in the first two fields.</p>
+
+<p>To obtain the CSS selectors you just need to do a small operation in your browser. Here is a quick YouTube video that explains how to do it: <a href="https://www.youtube.com/watch?v=GMk7ZLuo6Po">How to Get CSS Selector</a></p>
+
+<p>When copying the CSS selector of the username field and password field, make sure you’re actually copying the selector of the actual form field. Most likely this would be a <code class="highlighter-rouge">&lt;input&gt;</code> element in both cases.</p>
+
+<p>If you have any questions please reach out to support@rasterwise.com
+s</p>
+
+                        
+                            <div class="share uk-text-center uk-margin-medium-top">
+    
+        <a class="uk-link-muted" href="https://twitter.com/intent/tweet?text=/v1/get-screenshot&url=http://localhost:4000/docs/getscreenshot/api-reference-0/&via=&related=" rel="nofollow" target="_blank" title="Share on Twitter" onclick="window.open(this.href, 'twitter', 'width=550,height=235');return false;"><span data-uk-icon="icon: twitter; ratio: 1.2"></span></a>
+    
+    
+        <a class="uk-link-muted uk-margin-small-left" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fdocs%2Fgetscreenshot%2Fapi-reference-0%2F" rel="nofollow" target="_blank" title="Share on Facebook" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"><span data-uk-icon="icon: facebook; ratio: 1.2"></span></a>
+    
+</div>
+                        
+                    </div>
+
+                    
+
+                    <hr class="uk-margin-medium">
+
+                    
+
+
+  
+  
+
+  
+  
+
+  
+  
+    <div class="uk-margin-large-top paginate-post">
+        <div class="uk-child-width-expand@s uk-grid-large uk-pagi" data-uk-grid>
+            <div>
+                
+                  
+                  
+                  
+                    <h5>API Overview</h5>
+                    <div><a class="remove-underline hvr-back" href="/docs/getscreenshot/api-overview/">&larr; Previous</a></div>
+                
+            </div>
+            <div>
+                
+                  
+                  
+                  
+                    <h5>/v1/usage</h5>
+                    <div class="uk-text-right"><a class="remove-underline hvr-forward" href="/docs/getscreenshot/api-reference-1/">Next &rarr;</a></div>
+                
+            </div>
+        </div>
+    </div>
+    
+
+
+                    <div class="uk-margin-large-top">
+    <h3>Related Docs</h3>
+
+    
+    
+    
+
+    <ul class="uk-list link-secondary">
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+    </ul>
+</div>
+
+
+                    
+                </article>
+
+                <script>
+                    // Table of contents scroll to
+                    UIkit.scroll('#markdown-toc a', {
+                        duration: 400,
+                        offset: 120
+                    });
+                </script>
+
+            </div>
+
+    </div>
+</div>
+
+
+    <div id="offcanvas-docs" data-uk-offcanvas="overlay: true">
+    <div class="uk-offcanvas-bar">
+
+        <button class="uk-offcanvas-close" type="button" data-uk-close></button>
+
+        
+        <h5 class="uk-margin-top">GetScreenshot</h5>
+        <ul class="uk-nav uk-nav-default doc-nav">
+        
+          
+          
+          <li class=""><a href="/docs/getscreenshot/getting-started/">Getting Started</a></li>
+        
+          
+          
+          <li class=""><a href="/docs/getscreenshot/api-overview/">API Overview</a></li>
+        
+          
+          
+          <li class="uk-active"><a href="/docs/getscreenshot/api-reference-0/">/v1/get-screenshot</a></li>
+        
+          
+          
+          <li class=""><a href="/docs/getscreenshot/api-reference-1/">/v1/usage</a></li>
+        
+        </ul>
+        
+        <h5 class="uk-margin-top">GetScrape</h5>
+        <ul class="uk-nav uk-nav-default doc-nav">
+        
+          
+          
+          <li class=""><a href="/docs/getscrape/getting-started/">Getting Started</a></li>
+        
+          
+          
+          <li class=""><a href="/docs/getscrape/api-reference-0/">/v1/get-scrape</a></li>
+        
+          
+          
+          <li class=""><a href="/docs/getscreenshot/api-reference-1/">/v1/usage</a></li>
+        
+        </ul>
+        
+        <h5 class="uk-margin-top">Integrations</h5>
+        <ul class="uk-nav uk-nav-default doc-nav">
+        
+          
+          
+          <li class=""><a href="/docs/connections/zapier/">Connecting to Zapier</a></li>
+        
+          
+          
+          <li class=""><a href="/docs/connections/sheets/">Connecting to Google Sheets</a></li>
+        
+        </ul>
+        
+
+    </div>
+</div>
+
+
+    <div id="offcanvas" data-uk-offcanvas="flip: true; overlay: true">
+    <div class="uk-offcanvas-bar">
+
+        <a class="uk-logo uk-margin-small-bottom" href="/"><img src="http://localhost:4000/uploads/docs-logo.svg" alt="Rasterwise Docs"></a>
+     
+        <button class="uk-offcanvas-close" type="button" data-uk-close></button>
+      
+        <ul class="uk-nav uk-nav-primary uk-margin-top">
+            
+                
+
+                
+
+                
+                    <li><a href="/" >Home</a></li>
+                
+            
+                
+
+                
+
+                
+                    <li><a href="/docs/getscreenshot/getting-started/" >Docs</a></li>
+                
+            
+                
+
+                
+
+                
+                    <li><a href="https://blog.rasterwise.com" target="_blank" >Blog</a></li>
+                
+            
+                
+
+                
+
+                
+                    <li><div class="uk-navbar-item"><a class="uk-button uk-button-success" href="mailto: support@rasterwise.com" >Contact</a></div></li>
+                
+            
+        </ul>
+
+        <div class="uk-margin-top uk-text-center">
+            <div data-uk-grid class="uk-child-width-auto uk-grid-small uk-flex-center uk-grid">
+                
+<div class="uk-first-column">
+    <a href="https://twitter.com/" data-uk-icon="icon: twitter" class="uk-icon-link uk-icon" target="_blank"></a>
+</div>
+
+
+<div>
+    <a href="https://www.facebook.com/" data-uk-icon="icon: facebook" class="uk-icon-link uk-icon" target="_blank"></a>
+</div>
+
+
+
+
+<div>
+    <a href="https://www.instagram.com/" data-uk-icon="icon: instagram" class="uk-icon-link uk-icon" target="_blank"></a>
+</div>
+
+
+
+
+
+<div>
+    <a href="https://vimeo.com/" data-uk-icon="icon: vimeo" class="uk-icon-link uk-icon" target="_blank"></a>
+</div>
+
+
+
+
+
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+    
+
+    
+        
+    
+
+    
+
+    </body>
+
+</html>

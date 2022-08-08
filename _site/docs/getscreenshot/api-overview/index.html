@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>API Overview | Rasterwise Docs</title>
+<meta name="generator" content="Jekyll v3.4.1" />
+<meta property="og:title" content="API Overview" />
+<meta name="author" content="Juan J. Ramirez" />
+<meta property="og:locale" content="en" />
+<meta name="description" content="Sections in this reference" />
+<meta property="og:description" content="Sections in this reference" />
+<link rel="canonical" href="http://localhost:4000/docs/getscreenshot/api-overview/" />
+<meta property="og:url" content="http://localhost:4000/docs/getscreenshot/api-overview/" />
+<meta property="og:site_name" content="Rasterwise Docs" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-08-07T23:17:22-05:00" />
+<script type="application/ld+json">
+{"url":"http://localhost:4000/docs/getscreenshot/api-overview/","@type":"BlogPosting","headline":"API Overview","dateModified":"2022-08-07T23:17:22-05:00","datePublished":"2022-08-07T23:17:22-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/docs/getscreenshot/api-overview/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/docs-logo.svg"},"name":"Juan J. Ramirez"},"author":{"@type":"Person","name":"Juan J. Ramirez"},"description":"Sections in this reference","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <meta property="og:image" content="http://localhost:4000/uploads/docs-logo.svg"/>
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="shortcut icon" type="image/png" href="/uploads/favicon.png" >
+  <link rel="alternate" type="application/rss+xml" title="Rasterwise Docs" href="/feed.xml">
+  <script src="/assets/js/main.js"></script>
+  
+    <script>
+function searchResults(form) {
+
+    var currentItem = null;
+    var search = document.getElementById(form);
+    var results = document.getElementById(form + "-results");
+    var toggle = document.getElementById(form + "-toggle");
+
+    function removeActive() {
+        for (i = 0; i < results.children.length; i++) {
+            results.children[i].classList.remove("uk-background-muted");
+        }
+    }
+
+    // Detect all clicks on the document
+    document.addEventListener("click", function(event) {
+
+        var isClickSearch = false;
+        var isClickResults = false;
+        var isClickSearchToggle = false;
+
+        if (search !== null) {
+            isClickSearch = search.contains(event.target);
+        }
+
+        if (results !== null) {
+            isClickResults = results.contains(event.target);
+        }
+
+        if (toggle !== null) {
+            isClickSearchToggle = toggle.contains(event.target);
+        }
+
+        if (isClickSearch || isClickSearchToggle) {
+            results.style.display = "block";
+        }        
+
+        if (!isClickResults && !isClickSearch && !isClickSearchToggle) {
+            results.style.display = "none";
+        }        
+        
+    });    
+
+    results.addEventListener("mouseover", function(event) {
+
+        removeActive();
+        event.target.parentElement.classList.add("uk-background-muted");
+        currentItem = null;
+
+    });
+
+    results.addEventListener("mouseout", function(event) {
+        event.target.parentElement.classList.remove("uk-background-muted");
+    });
+
+
+    search.addEventListener("keyup", function(event) {
+
+        var resultItems = results.children;
+        var resultCount = results.children.length;
+                                
+        if (event.keyCode === 40) {
+
+            if (currentItem < (resultCount - 1)) {
+                if (currentItem === null) {
+                    currentItem = 0;
+                } else {
+                    removeActive();
+                    currentItem++;
+                }
+                removeActive();
+                resultItems[currentItem].classList.add("uk-background-muted");
+            }
+            
+        } else if (event.keyCode === 38) {
+
+            if (currentItem > 0) {
+                if (currentItem === null) {
+                    currentItem = 0;
+                } else {
+                    removeActive();
+                    currentItem--;
+                }
+                removeActive();
+                resultItems[currentItem].classList.add("uk-background-muted");
+            }
+
+        } else if (event.keyCode === 13) {
+
+            resultItems[currentItem].children[0].click();
+
+        }
+
+    });
+
+}
+</script>
+  
+  
+  
+</head>
+
+    <body>
+
+    
+        <div data-uk-sticky="animation: uk-animation-slide-top; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; cls-inactive: uk-navbar-transparent; top: 200">
+    <nav class="uk-navbar-container">
+        <div class="uk-container">
+            <div data-uk-navbar>
+                <div class="uk-navbar-left">
+                    <a class="uk-navbar-item uk-logo uk-visible@m" href="/"><img src="http://localhost:4000/uploads/docs-logo.svg" alt="Rasterwise Docs"></a>
+                    
+                        <a class="uk-navbar-toggle uk-hidden@m" href="#offcanvas-docs" data-uk-toggle><span data-uk-navbar-toggle-icon></span> <span class="uk-margin-small-left">Docs</span></a>
+                    
+
+                    <ul class="uk-navbar-nav uk-visible@m">
+                        
+                            
+                            
+                            
+                                
+                                    
+                                        <li><a href="/" >Home</a></li>
+                                                                                                        
+                                
+                            
+                        
+                            
+                            
+                            
+                                
+                                    
+                                        <li><a href="/docs/getscreenshot/getting-started/" >Docs</a></li>
+                                                                                                        
+                                
+                            
+                        
+                            
+                            
+                            
+                                
+                                    
+                                        <li><a href="https://blog.rasterwise.com" target="_blank" >Blog</a></li>
+                                                                                                        
+                                
+                            
+                        
+                    </ul>
+                </div>
+                <div class="uk-navbar-center uk-hidden@m">
+                    <a class="uk-navbar-item uk-logo" href="/"><img src="http://localhost:4000/uploads/docs-logo.svg" alt="Rasterwise Docs"></a>
+                </div>
+                <div class="uk-navbar-right">
+                    
+                        
+                            <div>
+                                <a id="search-navbar-toggle" class="uk-navbar-toggle" uk-search-icon href="#"></a>
+                                <div class="uk-drop uk-background-default uk-border-rounded" uk-drop="mode: click; pos: left-center; offset: 0">
+                                    <form class="uk-search uk-search-navbar uk-width-1-1" onsubmit="return false;">
+                                        <input id="search-navbar" class="uk-search-input" type="search" placeholder="Search for answers" autofocus autocomplete="off">
+                                    </form>
+                                    <ul id="search-navbar-results" class="uk-position-absolute uk-width-1-1 uk-list"></ul>
+                                </div>
+                            </div>
+                            <script>
+                            SimpleJekyllSearch({
+                                searchInput: document.getElementById('search-navbar'),
+                                resultsContainer: document.getElementById('search-navbar-results'),
+                                noResultsText: '<li class="no-results">No results found</li>',
+                                searchResultTemplate: '<li><a href="{url}">{title}</a></li>',
+                                json: "/search.json"
+                            });
+                            searchResults("search-navbar");
+                            </script>
+                        
+                    
+
+                    <ul class="uk-navbar-nav uk-visible@m">
+                        
+                            
+                            
+                            
+                                
+                                    <li><div class="uk-navbar-item"><a class="uk-button uk-button-success" href="mailto: support@rasterwise.com" >Contact</a></div></li>
+                                
+                            
+                        
+                    </ul>
+
+                    
+                        <a class="uk-navbar-toggle uk-hidden@m" href="#offcanvas" data-uk-toggle><span data-uk-navbar-toggle-icon></span> <span class="uk-margin-small-left">Menu</span></a>
+                    
+
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
+    
+
+    <div class="uk-section">
+    <div class="uk-container">
+        <div class="uk-grid-large" data-uk-grid>
+
+            <div class="sidebar-fixed-width uk-visible@m">
+                <div class="sidebar-docs uk-position-fixed uk-margin-top">
+                    
+                    <h5>GetScreenshot</h5>
+                    <ul class="uk-nav uk-nav-default doc-nav">
+                    
+                      
+                      
+                      <li class=""><a href="/docs/getscreenshot/getting-started/">Getting Started</a></li>
+                    
+                      
+                      
+                      <li class="uk-active"><a href="/docs/getscreenshot/api-overview/">API Overview</a></li>
+                    
+                      
+                      
+                      <li class=""><a href="/docs/getscreenshot/api-reference-0/">/v1/get-screenshot</a></li>
+                    
+                      
+                      
+                      <li class=""><a href="/docs/getscreenshot/api-reference-1/">/v1/usage</a></li>
+                    
+                    </ul>
+                    
+                    <h5>GetScrape</h5>
+                    <ul class="uk-nav uk-nav-default doc-nav">
+                    
+                      
+                      
+                      <li class=""><a href="/docs/getscrape/getting-started/">Getting Started</a></li>
+                    
+                      
+                      
+                      <li class=""><a href="/docs/getscrape/api-reference-0/">/v1/get-scrape</a></li>
+                    
+                      
+                      
+                      <li class=""><a href="/docs/getscreenshot/api-reference-1/">/v1/usage</a></li>
+                    
+                    </ul>
+                    
+                    <h5>Integrations</h5>
+                    <ul class="uk-nav uk-nav-default doc-nav">
+                    
+                      
+                      
+                      <li class=""><a href="/docs/connections/zapier/">Connecting to Zapier</a></li>
+                    
+                      
+                      
+                      <li class=""><a href="/docs/connections/sheets/">Connecting to Google Sheets</a></li>
+                    
+                    </ul>
+                    
+                </div>
+            </div>
+
+            <div class="uk-width-1-1 uk-width-expand@m">
+
+                <article class="uk-article">
+
+                    <h1 class="uk-article-title">API Overview</h1>
+
+                    
+
+                    <div class="uk-article-meta uk-margin-top uk-margin-medium-bottom uk-flex uk-flex-middle">
+                        
+
+
+  
+  <img class="uk-border-circle avatar" src="http://localhost:4000/uploads/juan.jpg" alt="Juan J. Ramirez">
+
+
+<div>
+  
+    Written by <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Juan J. Ramirez</span></span><br>
+  
+  <time datetime="2022-08-07T23:17:22-05:00" itemprop="datePublished">
+    
+    Aug 7, 2022
+  </time>
+</div>
+                    </div>
+
+                    <div class="article-content link-primary">
+                        <h4 class="no_toc" id="sections-in-this-reference">Sections in this reference</h4>
+<ul id="markdown-toc">
+  <li><a href="#get-model" id="markdown-toc-get-model">GET Model</a></li>
+  <li><a href="#speed" id="markdown-toc-speed">Speed</a></li>
+  <li><a href="#api-calls-caching" id="markdown-toc-api-calls-caching">API Calls Caching</a></li>
+  <li><a href="#screenshot-caching-and-hotlinking" id="markdown-toc-screenshot-caching-and-hotlinking">Screenshot Caching and Hotlinking</a></li>
+  <li><a href="#how-does-getscreenshot-capture-screenshots" id="markdown-toc-how-does-getscreenshot-capture-screenshots">How does GetScreenshot capture screenshots?</a></li>
+  <li><a href="#why-should-i-use-getscreenshot-instead-of-writing-my-own-implementation" id="markdown-toc-why-should-i-use-getscreenshot-instead-of-writing-my-own-implementation">Why should I use GetScreenshot instead of writing my own implementation?</a>    <ul>
+      <li><a href="#using-puppeteer-is-easy-making-it-work-the-right-way-is-hard" id="markdown-toc-using-puppeteer-is-easy-making-it-work-the-right-way-is-hard">Using Puppeteer is easy. Making it work the right way is hard.</a></li>
+      <li><a href="#if-your-job-is-to-write-beautiful-and-performant-code-for-complex-problems-you-will-hate-writing-your-own-implementation-of-this" id="markdown-toc-if-your-job-is-to-write-beautiful-and-performant-code-for-complex-problems-you-will-hate-writing-your-own-implementation-of-this">If your job is to write beautiful and performant code for complex problems, you will hate writing your own implementation of this.</a></li>
+      <li><a href="#you-actually-need-to-provide-infrastructure-resources-just-for-this" id="markdown-toc-you-actually-need-to-provide-infrastructure-resources-just-for-this">You actually need to provide infrastructure resources, just for this.</a></li>
+      <li><a href="#your-time-as-a-developer-is-actually-more-expensive-than-you-think" id="markdown-toc-your-time-as-a-developer-is-actually-more-expensive-than-you-think">Your time as a developer is actually more expensive than you think.</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="get-model">GET Model</h3>
+
+<p>GetScreenshot is a REST API that can be accessed by any standard/popular client with HTTP capabilities. This means that almost any language with an HTTP request library o built-in module can make calls to GetScreenshot.</p>
+
+<p>A successful request to the GetScreenshot API will return a simple JSON that includes a URL pointing to the resulting screen capture.</p>
+
+<p>By design, GetScreenshot only uses a GET / URL query parameter model. We intentionally designed the API this way to favor usability, low-effort implementations and beginner developer friendliness. There’s also a tiny performance improvement when using GET requests instead of POST, but we didn’t consider this when designing the API.</p>
+
+<p>Although we believe a GET endpoint is the right approach for this type of service, we understand that there are situations (for security / or architecture reasons) where passing formed JSON payloads to a POST API is necessary. We don’t have that functionality yet, but we want to support it if there’s enough customer appetite for it. If you are interested in this please contact us to support@rasterwise.com</p>
+
+<h3 id="speed">Speed</h3>
+
+<p>GetScreenshot is heavily optimized to return a response in as little time as possible. However is important to understand that the underlying operation is equivalent to navigating to any website from a Chrome Browser tab.</p>
+
+<p>GetScreenshot will make several optimizations under the hood, but it will only be as fast as the website you’re trying to load.</p>
+
+<p>In general terms, the size of a website shouldn’t have a noticeable impact on the API response times, since GetScreenshot operates on top of a server with a throughput of 10 Gbps.</p>
+
+<p>However, GetScreenshot needs to make scrolling operations and controlled wait times in order to reveal all the DOM elements. This will have an impact on the speed of the response depending on the size of the DOM that you’re trying to capture.</p>
+
+<p>In practice GetScreenshot API response times take in average 8000-12000 ms for simple websites and 15000 to 22000 ms for complex websites.</p>
+
+<p>Have in mind that after 30000 ms the API will timeout regardless of what’s happening in the server. It’s extremely rare for GetScreenshot to go over 30 seconds. If your website is very complex and indeed takes more than 30 seconds to get captured, our standard solution might not be a good fit for your case.
+We can provide a dedicated endpoint for your business with a custom timeout. If you’re interested on this, please contact us.</p>
+
+<h3 id="api-calls-caching">API Calls Caching</h3>
+
+<p>GetScreenshot API is <strong>NOT</strong> cached. That means that every time you make a call and get a successful response you will get a new fresh capture. We opted to not cache our API to decrease the pricing associated with setting up a cache cluster and cache index. This is reflected in a cheaper API call than other services.</p>
+
+<p>We also opted to not cache our API because we believe ephemeral responses are more secure since we are dealing with a smaller data surface.
+In simple terms what this means is that your request lives only for the time is needed to provide a response. This allows us to offer a service that is easily adaptable to a HIPAA and GDPR compliant architecture.</p>
+
+<p>If you have a need for cached API calls, we can provide a dedicated cached endpoint for an extra monthly fee. This fee covers the price of a 512MB cache cluster and a cache index. If you’re interested in something like this please let us know at support@rasterwise.com</p>
+
+<h3 id="screenshot-caching-and-hotlinking">Screenshot Caching and Hotlinking</h3>
+
+<p>Screenshots are saved for 30 days in a secure Amazon S3 Bucket or Google Cloud Storage Bucket. You can access and retrieve your screenshot image as many times as you want with no extra charge during the next 30 days after the screenshot was generated. You can also hotlink to the image but please note that the image will get deleted after 30 days, no exceptions.</p>
+
+<hr />
+
+<h3 id="how-does-getscreenshot-capture-screenshots">How does GetScreenshot capture screenshots?</h3>
+
+<p>As many services in this space, GetScreenshot uses Google’s Headless Chrome implementation (Puppeteer) to generate your screenshots.
+When you send a request to our service the following things will happen:</p>
+
+<ul>
+  <li>The server will launch a headless Chrome session.</li>
+  <li>Then it will perform a controlled navigation that emulates a common user navigation, based on the preferences set in your request.</li>
+  <li>Upon loading the passed website, our script will snap a screenshot and perform any requested post-processing.</li>
+  <li>The script will save the screenshot to a secure static storage location (a secure Amazon S3 Bucket).</li>
+  <li>The script will send a response back to your client, with the URL of your screenshot.</li>
+  <li>You can retrieve the resulting screenshot for the following 30 days. After 30 days, the object will get deleted forever.</li>
+  <li>The script that capture screenshots is highly tuned to return accurate renderings. Under the hood GetScreenshot has three capturing modes that cover multiple edge cases.</li>
+  <li>GetScreenshot determines automatically which one is the best fit for the page you’re trying to capture and deals with animations, viewport height units, lazy-loaded elements and more.</li>
+</ul>
+
+<h3 id="why-should-i-use-getscreenshot-instead-of-writing-my-own-implementation">Why should I use GetScreenshot instead of writing my own implementation?</h3>
+
+<p>We definitely asked this question ourselves when releasing this API. Also there are several other services in this space that offer similar APIs, so it’s fair to assume that there’s demand for this kind of managed service, so there must be a reason to avoid a self-managed implementation.</p>
+
+<p>We really don’t have a concrete answer, but here is what we believe are the top reasons to choose a service like GetScreenshot:</p>
+
+<h4 id="using-puppeteer-is-easy-making-it-work-the-right-way-is-hard">Using Puppeteer is easy. Making it work the right way is hard.</h4>
+
+<p>If you decide to go and write your own service on top of Puppeteer you will quickly find how hard is to get its synchronous behavior right.</p>
+
+<p>It’s very likely that you will spend countless hours trying to tweak the execution of your Puppeteer script just to address edge cases. We have already done that, and we keep doing it. We addressed several edge cases and we keep updating our underlying logic to address more.</p>
+
+<h4 id="if-your-job-is-to-write-beautiful-and-performant-code-for-complex-problems-you-will-hate-writing-your-own-implementation-of-this">If your job is to write beautiful and performant code for complex problems, you will hate writing your own implementation of this.</h4>
+
+<p>Sounds over dramatical, but is true. There’s nothing glamorous or exciting about writing a screenshot capture service for your own application. You are going to spend countless hours trying to understand why a certain particular DOM element is not showing or why Puppeteer for some reason is capturing a complete white page.</p>
+
+<p>We build GetScreenshot and offer it at a low price point, so you can go and work on the important stuff.</p>
+
+<p>If you’re passionate about this area of work, then we definitely encourage you to go and test writing your own implementation. Otherwise, we encourage you to give us a try.</p>
+
+<h4 id="you-actually-need-to-provide-infrastructure-resources-just-for-this">You actually need to provide infrastructure resources, just for this.</h4>
+
+<p>Amazon EC2? Amazon ECS? Digital Ocean Droplet? Google GCE? Heroku App? A Linux Machine in the janitorial closet?</p>
+
+<p>Whatever it is, you need something to run your own screenshot capture service, and that means dealing with provisioning and paying for under-used resources.</p>
+
+<p>Our recommendation is to not waste time on this and simply go with something already implemented and exposed through a secure RESTful API. That’s where we come. At our price point, it’s just easier and potentially cheaper. There’s no point in managing this yourself.</p>
+
+<h4 id="your-time-as-a-developer-is-actually-more-expensive-than-you-think">Your time as a developer is actually more expensive than you think.</h4>
+
+<p>Let’s say that you are a mid-level developer in a small market earning $90K USD per year, working 40 hours per week. Your effective hour rate is: $47 USD per hour.
+Now, writing your own super basic implementation of this will take at least 5 hours. But that’s just getting a simple prototype ready.</p>
+
+<p>Realistically you can spend +30 hours just trying to address rendering issues, spinning and calibrating resources, creating and exposing a RESTful API, writing documentation, testing, etc. And then you also need to integrate this into whatever you’re planning to use, support it, and likely expand it to address some alternative uses.</p>
+
+<p>So in a realistic scenario, you can easily spend more than a week writing something like this, and then a an hour every month supporting it. That’s almost $2000 USD of your time, just to write a service like this, plus another $500 USD or so, just to support it every year. And this doesn’t include whatever you’re paying to run it.</p>
+
+<p>GetScreenshot P90 of screenshot needs, is about 5000 captures which you can get with a $10 USD a month plan. That’s $120 USD a year.</p>
+
+<p>So the question is: What sounds better? Spending +$2500 worth of your time and stress to write a similar service or pay $120 USD to someone else and let them deal with it?
+If you’re still not convinced about the price, please let us know. We can always work out something based on your specific needs.</p>
+
+                        
+                            <div class="share uk-text-center uk-margin-medium-top">
+    
+        <a class="uk-link-muted" href="https://twitter.com/intent/tweet?text=API Overview&url=http://localhost:4000/docs/getscreenshot/api-overview/&via=&related=" rel="nofollow" target="_blank" title="Share on Twitter" onclick="window.open(this.href, 'twitter', 'width=550,height=235');return false;"><span data-uk-icon="icon: twitter; ratio: 1.2"></span></a>
+    
+    
+        <a class="uk-link-muted uk-margin-small-left" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fdocs%2Fgetscreenshot%2Fapi-overview%2F" rel="nofollow" target="_blank" title="Share on Facebook" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"><span data-uk-icon="icon: facebook; ratio: 1.2"></span></a>
+    
+</div>
+                        
+                    </div>
+
+                    
+
+                    <hr class="uk-margin-medium">
+
+                    
+
+
+  
+  
+
+  
+  
+    <div class="uk-margin-large-top paginate-post">
+        <div class="uk-child-width-expand@s uk-grid-large uk-pagi" data-uk-grid>
+            <div>
+                
+                  
+                  
+                  
+                    <h5>Getting Started</h5>
+                    <div><a class="remove-underline hvr-back" href="/docs/getscreenshot/getting-started/">&larr; Previous</a></div>
+                
+            </div>
+            <div>
+                
+                  
+                  
+                  
+                    <h5>/v1/get-screenshot</h5>
+                    <div class="uk-text-right"><a class="remove-underline hvr-forward" href="/docs/getscreenshot/api-reference-0/">Next &rarr;</a></div>
+                
+            </div>
+        </div>
+    </div>
+    
+
+
+                    <div class="uk-margin-large-top">
+    <h3>Related Docs</h3>
+
+    
+    
+    
+
+    <ul class="uk-list link-secondary">
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+    </ul>
+</div>
+
+
+                    
+                </article>
+
+                <script>
+                    // Table of contents scroll to
+                    UIkit.scroll('#markdown-toc a', {
+                        duration: 400,
+                        offset: 120
+                    });
+                </script>
+
+            </div>
+
+    </div>
+</div>
+
+
+    <div id="offcanvas-docs" data-uk-offcanvas="overlay: true">
+    <div class="uk-offcanvas-bar">
+
+        <button class="uk-offcanvas-close" type="button" data-uk-close></button>
+
+        
+        <h5 class="uk-margin-top">GetScreenshot</h5>
+        <ul class="uk-nav uk-nav-default doc-nav">
+        
+          
+          
+          <li class=""><a href="/docs/getscreenshot/getting-started/">Getting Started</a></li>
+        
+          
+          
+          <li class="uk-active"><a href="/docs/getscreenshot/api-overview/">API Overview</a></li>
+        
+          
+          
+          <li class=""><a href="/docs/getscreenshot/api-reference-0/">/v1/get-screenshot</a></li>
+        
+          
+          
+          <li class=""><a href="/docs/getscreenshot/api-reference-1/">/v1/usage</a></li>
+        
+        </ul>
+        
+        <h5 class="uk-margin-top">GetScrape</h5>
+        <ul class="uk-nav uk-nav-default doc-nav">
+        
+          
+          
+          <li class=""><a href="/docs/getscrape/getting-started/">Getting Started</a></li>
+        
+          
+          
+          <li class=""><a href="/docs/getscrape/api-reference-0/">/v1/get-scrape</a></li>
+        
+          
+          
+          <li class=""><a href="/docs/getscreenshot/api-reference-1/">/v1/usage</a></li>
+        
+        </ul>
+        
+        <h5 class="uk-margin-top">Integrations</h5>
+        <ul class="uk-nav uk-nav-default doc-nav">
+        
+          
+          
+          <li class=""><a href="/docs/connections/zapier/">Connecting to Zapier</a></li>
+        
+          
+          
+          <li class=""><a href="/docs/connections/sheets/">Connecting to Google Sheets</a></li>
+        
+        </ul>
+        
+
+    </div>
+</div>
+
+
+    <div id="offcanvas" data-uk-offcanvas="flip: true; overlay: true">
+    <div class="uk-offcanvas-bar">
+
+        <a class="uk-logo uk-margin-small-bottom" href="/"><img src="http://localhost:4000/uploads/docs-logo.svg" alt="Rasterwise Docs"></a>
+     
+        <button class="uk-offcanvas-close" type="button" data-uk-close></button>
+      
+        <ul class="uk-nav uk-nav-primary uk-margin-top">
+            
+                
+
+                
+
+                
+                    <li><a href="/" >Home</a></li>
+                
+            
+                
+
+                
+
+                
+                    <li><a href="/docs/getscreenshot/getting-started/" >Docs</a></li>
+                
+            
+                
+
+                
+
+                
+                    <li><a href="https://blog.rasterwise.com" target="_blank" >Blog</a></li>
+                
+            
+                
+
+                
+
+                
+                    <li><div class="uk-navbar-item"><a class="uk-button uk-button-success" href="mailto: support@rasterwise.com" >Contact</a></div></li>
+                
+            
+        </ul>
+
+        <div class="uk-margin-top uk-text-center">
+            <div data-uk-grid class="uk-child-width-auto uk-grid-small uk-flex-center uk-grid">
+                
+<div class="uk-first-column">
+    <a href="https://twitter.com/" data-uk-icon="icon: twitter" class="uk-icon-link uk-icon" target="_blank"></a>
+</div>
+
+
+<div>
+    <a href="https://www.facebook.com/" data-uk-icon="icon: facebook" class="uk-icon-link uk-icon" target="_blank"></a>
+</div>
+
+
+
+
+<div>
+    <a href="https://www.instagram.com/" data-uk-icon="icon: instagram" class="uk-icon-link uk-icon" target="_blank"></a>
+</div>
+
+
+
+
+
+<div>
+    <a href="https://vimeo.com/" data-uk-icon="icon: vimeo" class="uk-icon-link uk-icon" target="_blank"></a>
+</div>
+
+
+
+
+
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+    
+
+    
+        
+    
+
+    
+
+    </body>
+
+</html>
