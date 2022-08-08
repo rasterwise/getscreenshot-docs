@@ -1,10 +1,27 @@
 ---
-layout: page
-width: expand
+title: Home
+description: "Rasterwise builds affordable web utilities exposed through easy to use RESTful API endpoints"
+nav_order: 0
 ---
 
-{% include boxes.html columns="3" title="Rasterwise Documentation" subtitle="Explore out guides and examples to integrate with Rasterwise APIs" %}
+# Rasterwise APIs
 
-<!-- {% include faqs.html multiple="true" title="Frequently asked questions" category="presale" subtitle="Find quicke answers to frequent pre-sale questions asked by customers" %} -->
+<hr>
 
-{% include cta.html title="Didn't find an answer?" button_text="Contact Us" button_url="mailto: support@rasterwise.com" subtitle="Get in touch with us for non-documented API help and guidance, implementation help or questions, additional custom services pricing and billing support." %}
+## GetScreenshot
+
+GetScreenshot is a powerful programmable API that allows you to do screenshot operations at scale
+and for less than the existing solutions.
+
+[Getting Started](https://docs.rasterwise.com/get-screenshot/){: .btn .btn-purple }
+[API Reference](https://docs.rasterwise.com/get-screenshot/api-reference){: .btn .btn-outline }
+
+<hr>
+
+## GetScrape
+
+GetScrape is a high-level web scraping API that uses a headless browser to extract data from websites
+and focuses on the information you need and not on how is enclosed. (Coming Soon!)
+
+[Getting Started](https://docs.rasterwise.com/get-scrape/){: .btn .btn-purple }
+[API Reference](https://docs.rasterwise.com/get-scrape/api-reference){: .btn .btn-outline }
